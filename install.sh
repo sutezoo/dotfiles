@@ -30,7 +30,6 @@ sudo tar -C /usr/local -xzf go1.20.3.linux-amd64.tar.gz
 # symbolic links
 mkdir ~/backup
 mv ~/.bashrc ~/backup
-mv ~/.tmux.conf ~/backup
 mv ~/.config/fish/config.fish ~/backup
 
 ln -s .bashrc ~/
