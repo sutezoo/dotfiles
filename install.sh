@@ -28,11 +28,21 @@ sudo tar -C /usr/local -xzf go1.20.3.linux-amd64.tar.gz
 /usr/local/go/bin/go install github.com/x-motemen/ghq@latest
 
 # symbolic links
+set bashrc ~/.bashrc
+set tmuxconf ~/.tmux.conf
+set fishconf ~/.config/fish/config.fish
 mkdir ~/backup
-mv ~/.bashrc ~/backup
-mv ~/.config/fish/config.fish ~/backup
+if [ -f bashrc ]; then
+  mv $bashrc ~/backup
+fi
+if [ -f tmuxconf ]; then
+  mv ~/.tmux.conf ~/backup
+fi
+if [ -f fishconf ]; then
+  mv ~/.config/fish/config.fish ~/backup
+fi
 
 ln -s .bashrc ~/
 ln -s .tmux.conf ~/
 ln -s config.fish ~/.config/fish/
-ln -s config.fish ~/.config/fish/functions/
+ln -s tminimum.fish ~/.config/fish/functions/
