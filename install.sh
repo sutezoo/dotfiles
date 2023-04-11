@@ -27,10 +27,6 @@ wget https://go.dev/dl/go1.20.3.linux-amd64.tar.gz
 sudo tar -C /usr/local -xzf go1.20.3.linux-amd64.tar.gz
 /usr/local/go/bin/go install github.com/x-motemen/ghq@latest
 
-git clone https://github.com/x-motemen/ghq
-cd ghq
-make install
-
 # symbolic links
 mkdir ~/backup
 mv ~/.bashrc ~/backup
