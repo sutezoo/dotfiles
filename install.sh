@@ -6,7 +6,7 @@ sudo apt upgrade -y
 
 # fish related installs
 ## fish
-sudo apt-add-repository ppa:fish-shell/release-3
+sudo apt-add-repository -y ppa:fish-shell/release-3
 sudo apt update
 sudo apt install -y fish
 exec fish
