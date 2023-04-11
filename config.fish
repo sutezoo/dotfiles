@@ -68,7 +68,7 @@ set -g fish_pager_color_description 565f89
 set -g fish_pager_color_selected_background --background=364a82
 
 #aliases
-alias t='tmuximum'
+alias t='tminimum'
 
 #docker alias
 alias drun='docker run'
@@ -108,4 +108,20 @@ end
 # fish key bindings
 function fish_user_key_bindings
     bind \cg ghq_fzf_repo
+end
+
+# Base16 Shell
+if status --is-interactive
+    set -l BASE16_DIR $HOME/.config/base16-shell
+    set -l BASE16_THEME base16-dracula
+
+    begin
+        test -d $BASE16_DIR
+        and not set -qx VIM    # Vim/Neovim
+        and not set -qx VSCODE # VSCode with terminal.integrated.env.linux
+    end
+
+    if test $status -eq 0
+        bash $BASE16_DIR/scripts/$BASE16_THEME.sh
+    end
 end
