@@ -9,11 +9,10 @@ sudo apt upgrade -y
 sudo apt-add-repository -y ppa:fish-shell/release-3
 sudo apt update
 sudo apt install -y fish
-exec fish
 
 ## fisher
-curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source && fisher install jorgebucaran/fisher
-fisher install oh-my-fish/theme-bobthefish jethrokuan/fzf decors/fish-ghq jorgebucaran/nvm.fish
+fish -c "curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source && fisher install jorgebucaran/fisher"
+fish -c "fisher install oh-my-fish/theme-bobthefish jethrokuan/fzf decors/fish-ghq jorgebucaran/nvm.fish"
 
 ## fzf
 sudo apt install -y fzf
