@@ -6,7 +6,7 @@ sudo apt upgrade -y
 
 # fish related installs
 ## fish
-sudo apt-add-repository -y ppa:fish-shell/release-3
+sudo add-apt-repository ppa:fish-shell/release-4
 sudo apt update
 sudo apt install -y fish
 
@@ -22,9 +22,10 @@ git clone https://github.com/chriskempson/base16-shell.git ~/.config/base16-shel
 
 # ghq
 sudo apt install -y build-essential
-## golang(v1.20.3)
-wget https://go.dev/dl/go1.20.3.linux-amd64.tar.gz
-sudo tar -C /usr/local -xzf go1.20.3.linux-amd64.tar.gz
+## golang
+GOLANG_VERSION="1.24.4"
+wget "https://go.dev/dl/go${GOLANG_VERSION}.linux-amd64.tar.gz"
+sudo tar -C /usr/local -xzf "go${GOLANG_VERSION}.linux-amd64.tar.gz"
 /usr/local/go/bin/go install github.com/x-motemen/ghq@latest
 
 # symbolic links
